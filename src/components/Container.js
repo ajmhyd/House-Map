@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
 import MAP_KEY from '../config/Mapkey'
 
-
 export class Container extends Component {
-
     state = {
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
-    };
+    }
 
     onMarkerClick = (props, marker, e) =>
     this.setState({

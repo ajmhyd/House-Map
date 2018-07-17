@@ -1,30 +1,45 @@
 import React, { Component } from 'react';
 import './App.css';
 import Container from './components/Container';
-import { Navbar } from 'react-bootstrap'
 import Clubs from './data/Clubs.json'
+import ClubList from './components/ClubList'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clubs : []
+      clubs : [],
+      search: ''
     }
   }
+
   componentDidMount() {
     this.setState({
       clubs: Clubs
     })
-
   }
+
+  updateSearch(e) {
+    this.setState({ search: e.target.value})
+  }
+
   render() {
-    console.log(this.state.clubs)
-    const { clubs } = this.state
+    const { clubs, search } = this.state
+    let filteredClubs = clubs.filter(
+      (club) => {
+          return club.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+      }
+    );
+
     return (
       <div className="App">
-        <Navbar>
-          </Navbar>
-        <Container clubs={clubs} />
+       <input type="text"
+        placeholder="Search"
+        value={search}
+        onChange={(e) => this.updateSearch(e)}
+      />
+        <ClubList clubs={filteredClubs} />
+        <Container clubs={filteredClubs} />
       </div>
     );
   }
