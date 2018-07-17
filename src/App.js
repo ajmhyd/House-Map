@@ -33,13 +33,14 @@ class App extends Component {
 
     return (
       <div className="App">
-       <input type="text"
+        <Container clubs={filteredClubs} />
+        <input type="text"
         placeholder="Search"
         value={search}
         onChange={(e) => this.updateSearch(e)}
-      />
+        style={{float: 'left', position: 'relative'}}
+        />
         <ClubList clubs={filteredClubs} />
-        <Container clubs={filteredClubs} />
       </div>
     );
   }

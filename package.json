@@ -9,6 +9,7 @@
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
+    "react-icons-kit": "^1.1.6",
     "react-scripts": "1.1.4",
     "react-sidenav": "^2.1.3"
   },

@@ -27,8 +27,8 @@ export class Container extends Component {
 
     render () {
         const style = {
-            width: '100vw',
-            height: '100vh'
+            zIndex: 0,
+            top: 0
         }
         const { clubs } = this.props
         if (!this.props.loaded) {
