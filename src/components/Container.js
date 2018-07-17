@@ -32,6 +32,7 @@ export class Container extends Component {
             width: '100vw',
             height: '100vh'
         }
+        const { clubs } = this.props
         if (!this.props.loaded) {
             return <div>Loading...</div>
         }
@@ -45,38 +46,13 @@ export class Container extends Component {
                 }}
                 zoom={12}
                 onClick={this.onMapClicked}>
-                <Marker
-                    name={'Primary'}
-                    position={{lat: 41.903670, lng: -87.628941}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'The Mid'}
-                    position={{lat: 41.887083, lng: -87.647720}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'Spybar'}
-                    position={{lat: 41.893647, lng: -87.635909}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'Sound Bar'}
-                    position={{lat: 41.893414, lng: -87.635315}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'Prysm'}
-                    position={{lat: 41.909330, lng: -87.652520}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'Studio Paris'}
-                    position={{lat: 41.889786, lng: -87.630296}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'Berlin'}
-                    position={{lat: 41.940024, lng: -87.653873}}
-                    onClick={this.onMarkerClick} />
-                <Marker
-                    name={'Smartbar'}
-                    position={{lat: 41.949772, lng: -87.658822}}
-                    onClick={this.onMarkerClick} />
+                {clubs.map((club) => (
+                    <Marker
+                        key={club.name}
+                        name={club.name}
+                        position={{lat: club.lat, lng: club.lng}}
+                        onClick={this.onMarkerClick} />
+                ))}
                 <InfoWindow
                     onOpen={this.windowHasOpened}
                     onClose={this.windowHasClosed}

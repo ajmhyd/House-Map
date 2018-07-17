@@ -19,11 +19,12 @@ class App extends Component {
   }
   render() {
     console.log(this.state.clubs)
+    const { clubs } = this.state
     return (
       <div className="App">
         <Navbar>
           </Navbar>
-        <Container />
+        <Container clubs={clubs} />
       </div>
     );
   }
