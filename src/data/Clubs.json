@@ -38,5 +38,15 @@
     "name": "Smartbar",
     "lat": 41.949772,
     "lng": -87.658822
+  },
+  {
+    "name": "Cerise Rooftop",
+    "Lat": 41.886061,
+    "lng": -87.625855
+  },
+  {
+    "name": "Estate",
+    "lat": 41.903168,
+    "lng": -87.657647
   }
 ]
