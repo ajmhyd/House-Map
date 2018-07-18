@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Container from './components/Container';
 import Clubs from './data/Clubs.json'
-import ClubList from './components/ClubList'
 
 class App extends Component {
   constructor(props) {
@@ -25,9 +24,8 @@ class App extends Component {
 
   render() {
     const { clubs, search } = this.state
-    let filteredClubs = clubs.filter(
-      (club) => {
-          return club.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+    let filteredClubs = clubs.filter((club) => {
+        return club.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
       }
     );
 
@@ -40,7 +38,6 @@ class App extends Component {
         onChange={(e) => this.updateSearch(e)}
         style={{float: 'left', position: 'relative'}}
         />
-        <ClubList clubs={filteredClubs} />
       </div>
     );
   }
