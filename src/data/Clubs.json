@@ -1,52 +1,62 @@
 [
   {
-    "name": "Primary",
-    "lat": 41.903670,
-    "lng": -87.628941
+    "name": "Debonair Social Club",
+    "lat": 41.910198,
+    "lng": -87.676830,
+    "id": "45acf058f964a52067411fe3"
   },
   {
     "name": "The Mid",
     "lat": 41.887083,
-    "lng": -87.647720
+    "lng": -87.647720,
+    "id": "4cdd93f9c4f6a35d1854c46c"
   },
   {
     "name": "Spybar",
     "lat": 41.893797,
-    "lng": -87.635999
+    "lng": -87.635999,
+    "id": "40b28c80f964a520d1fb1ee3"
   },
   {
     "name": "Sound Bar",
     "lat": 41.893384,
-    "lng": -87.635265
+    "lng": -87.635265,
+    "id": "40b28c80f964a520cefb1ee3"
   },
   {
     "name": "Prysm",
     "lat": 41.909330,
-    "lng": -87.652520
+    "lng": -87.652520,
+    "id": "578affd5498e578def65135e"
   },
   {
     "name": "Studio Paris",
     "lat": 41.889786,
-    "lng": -87.630296
+    "lng": -87.630296,
+    "id": "4e02857ae4cdbd9a5174c041"
   },
   {
     "name": "Berlin",
     "lat": 41.940024,
-    "lng": -87.653873
+    "lng": -87.653873,
+    "id": "4b1a0610f964a52011e723e3"
   },
   {
     "name": "Smartbar",
     "lat": 41.949772,
-    "lng": -87.658822
+    "lng": -87.658822,
+    "id": "40b28c80f964a5200ffc1ee3"
   },
   {
     "name": "Cerise Rooftop",
     "lat": 41.886061,
-    "lng": -87.625855
+    "lng": -87.625855,
+    "id": "4f32805619836c91c7ddf859"
   },
   {
     "name": "Estate",
     "lat": 41.903168,
-    "lng": -87.657647
+    "lng": -87.657647,
+    "id": "4e46f1c0922ee4def2930efe"
   }
 ]
