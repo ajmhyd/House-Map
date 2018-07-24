@@ -37,6 +37,7 @@ class App extends Component {
         value={search}
         onChange={(e) => this.updateSearch(e)}
         style={{float: 'left', position: 'relative'}}
+        role={'Search'}
         />
       </div>
     );

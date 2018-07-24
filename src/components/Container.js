@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
 import MAP_KEY from '../config/Mapkey'
-import SideNav, { Nav, NavText, NavIcon } from 'react-sidenav'
-import {music} from 'react-icons-kit/fa/music'
-import SVGIcon from 'react-icons-kit'
 import CLIENT_ID from '../config/Clientid'
 import CLIENT_SECRET from '../config/ClientSecret'
+import swal from 'sweetalert'
+import Powered from '../img/Powered.png'
+import Sidebar from './Sidebar'
 
 export class Container extends Component {
     state = {
@@ -38,7 +38,7 @@ export class Container extends Component {
             rating: data.response.venue.rating
         })).catch((err) => {
             console.log(err)
-            alert('Api request has failed')
+            swal("Error!", "The api request has failed", "error")
         })
         this.setState({
         selectedPlace: props,
@@ -48,7 +48,7 @@ export class Container extends Component {
         });
     }
     //list click
-    async onListClick(club) {
+    onListClick = (club) => {
         fetch(`https://api.foursquare.com/v2/venues/${club.id}?&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=20180723`)
         .then(res => res.json())
         .then(data => this.setState({
@@ -56,7 +56,7 @@ export class Container extends Component {
             rating: data.response.venue.rating
         })).catch((err) => {
             console.log(err)
-            alert('Api request has failed')
+            swal("Error!", "The api request has failed", "error")
         });
         this.setState({
             showingListInfoWindow: true,
@@ -83,6 +83,7 @@ export class Container extends Component {
                 }}
                 zoom={12}
                 onClick={this.onMapClicked}
+                role={'Application'}
                 >
                 {clubs.map((club) => (
                     <Marker
@@ -99,8 +100,9 @@ export class Container extends Component {
                     visible={this.state.showingInfoWindow}>
                     <div>
                         <h4>{this.state.selectedPlace.name}</h4>
-                        <img src={this.state.photoUrl} alt={'Club'}/>
+                        <img src={this.state.photoUrl} alt={this.state.selectedPlace.name}/>
                         <h5>Rating: {this.state.rating}</h5>
+                        <img src={Powered} alt={'Powered by Foursqaure'}/>
                     </div>
                 </InfoWindow>
                 <InfoWindow
@@ -110,22 +112,12 @@ export class Container extends Component {
                     position={listCoord}>
                 <div>
                     <h4>{this.state.venue}</h4>
-                    <img src={this.state.photoUrl} alt={'Club'}/>
+                    <img src={this.state.photoUrl} alt={this.state.venue}/>
                     <h5>Rating: {this.state.rating}</h5>
+                    <img src={Powered} alt={'Powered by Foursqaure'}/>
                 </div>
                 </InfoWindow>
-                <div style={{background: '#2c3e50', color: '#000', width: 180,  paddingTop: '25px'}}>
-                    {clubs.map((club) => (
-                        <SideNav highlightColor='#E91E63' highlightBgColor='#00bcd4' key={club.name}>
-                            <button onClick={(e) => this.onListClick(club)} >
-                            <Nav id={club.name} key={club.name} >
-                                <NavIcon><SVGIcon size={20} icon={music}/></NavIcon>
-                                <NavText>{club.name}</NavText>
-                            </Nav>
-                            </button>
-                        </SideNav>
-                    ))}
-                </div>
+                <Sidebar onListClick={this.onListClick} clubs={clubs} />
             </Map>
             </div>
         )
