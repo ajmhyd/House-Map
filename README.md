@@ -36,4 +36,8 @@ The service worker only works in production mode.
 - CSS
 - Foursquare API
 - Google Maps API
+#### Npm Modules
+- google-maps-react
+- react-icons-kit
+- react-sidenav
 
