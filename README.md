@@ -20,6 +20,7 @@ After Node is installed in your system, follow the below steps.
 
 4. Start the app
 ```$ npm start```
+
 A new browser window should automatically open displaying the app.  If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser.
 
 ***NOTE:*** *The service workers for this app will only cache the site when it is in production mode.*
@@ -37,4 +38,5 @@ To run the project in Production Mode use the command
 - google-maps-react
 - react-icons-kit
 - react-sidenav
+- sweetalert
 
