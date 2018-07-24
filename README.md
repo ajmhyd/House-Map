@@ -1,6 +1,8 @@
 # Neighborhood Map
 A React application that uses the Google maps api to displays venues in Chicago that play House Music.
 
+![](https://img.shields.io/badge/Udacity-React-blue.svg)
+
 ## Prerequisites
 * [Node.js](https://nodejs.org/en/)
 
