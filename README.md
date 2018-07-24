@@ -8,23 +8,22 @@ After Node is installed in your system, follow the below steps.
 
 ## Installation instructions
 1. Clone the repository
-```console $ git clone https://github.com/ajmhyd/House-Map.git ```
+```$ git clone https://github.com/ajmhyd/House-Map.git```
 
 2. Move into the cloned directory
-```console $ cd House-Map ```
+```$ cd House-Map```
 
 3. Install dependencies
-```console
-$ npm install
-```
+```$ npm install```
 
 4. Start the app
-```console
-$ npm run build
-```
+```$ npm start```
 A new browser window should automatically open displaying the app.  If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser.
 
 ***NOTE:*** *The service workers for this app will only cache the site when it is in production mode.*
+
+To run the project in Production Mode use the command
+```$ npm run build``` instead of ```$ npm start```
 
 ## Technology
 - React
